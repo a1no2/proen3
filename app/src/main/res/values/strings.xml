@@ -1,3 +1,7 @@
 <resources>
 	<string name="app_name">proen3</string>
+	<string name="imgTitleSample_str">タイトル</string>
+	<string name="copyURL_str">この画像のURLをコピーする</string>
+	<string name="imgDescriptionSample_str">さんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷるさんぷる</string>
+
 </resources>
