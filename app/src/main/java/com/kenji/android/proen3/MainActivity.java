@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //レイアウトの生成
-//        dynamicViewGeneration(15);
+//        dynamicViewGeneration(10);
 
 
     }
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             for (int j=0; j<3; j++){
                 Button imgBtn = new Button(this);
                 imgBtn.setText(i + "-" + j);
-                ll.addView(imgBtn, new RelativeLayout.LayoutParams(300, ViewGroup.LayoutParams.WRAP_CONTENT));
+                ll.addView(imgBtn, new RelativeLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT));
             }
         }
 
