@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.kenji.android.proen3">
 
-	<!-- インターネット使用のパーミッション -->
+	<!-- インターネット使用 -->
 	<uses-permission android:name="android.permission.INTERNET"/>
+	<!-- ストレージにアクセス -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 	<application
 		android:allowBackup="true"
