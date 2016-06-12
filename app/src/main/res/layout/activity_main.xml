@@ -11,8 +11,20 @@
 
 	<Button
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="wrap_content"
 		android:onClick="aa"/>
+
+
+	<GridView
+		android:id="@+id/images_gridView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:numColumns="3"
+		android:verticalSpacing="10dp"
+		android:horizontalSpacing="10dp">
+
+	</GridView>
+
 
 
 
