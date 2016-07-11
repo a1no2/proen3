@@ -1,9 +1,11 @@
 package com.kenji.android.proen3;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -17,8 +19,10 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,11 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Bitmap> list = load();
         BitmapAdapter adapter = new BitmapAdapter(
-                getApplicationContext(), R.layout.list_item,
+                getApplicationContext(),
+                R.layout.list_item,
                 list);
 
+        LinearLayout allWrap_Linear = (LinearLayout) findViewById(R.id.allWrap_Linear);
+
         GridView gridView = (GridView) findViewById(R.id.images_gridView);
+//        gridView.setHorizontalSpacing(100);
         gridView.setAdapter(adapter);
+
+        //位置指定　XMLで指定してあるなら要らない
+//        allWrap_Linear.addView(gridView, 1, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
 
     }
@@ -58,35 +69,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //動的にview生成
-    //GridViewできたから、いらない子
-    private void dynamicViewGeneration(int GenerationNumber){
-        ScrollView sv = new ScrollView(this);
-        sv.setMinimumWidth(ViewGroup.LayoutParams.MATCH_PARENT);
-        sv.setMinimumHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        setContentView(sv);
-
-        LinearLayout linear_v = new LinearLayout(this);
-        linear_v.setOrientation(LinearLayout.VERTICAL);
-        sv.addView(linear_v, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-
-        for (int i=0; i<GenerationNumber; i++){
-            LinearLayout ll = new LinearLayout(this);
-            ll.setOrientation(LinearLayout.HORIZONTAL);
-            linear_v.addView(ll, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-            for (int j=0; j<3; j++){
-                Button imgBtn = new Button(this);
-                imgBtn.setText(i + "-" + j);
-                ll.addView(imgBtn, new RelativeLayout.LayoutParams(400, ViewGroup.LayoutParams.WRAP_CONTENT));
-            }
-        }
-
-    }
-
-
-
-    public void aa(View v){
-        Intent i = new Intent(this,DetailImageActivity.class);
+    //仮置き
+    public void aa(View v) {
+        Intent i = new Intent(this, DetailImageActivity.class);
         startActivity(i);
     }
+
 }

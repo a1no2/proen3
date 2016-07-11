@@ -2,6 +2,7 @@
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/allWrap_Linear"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
@@ -14,16 +15,15 @@
 		android:layout_height="wrap_content"
 		android:onClick="aa"/>
 
-
 	<GridView
 		android:id="@+id/images_gridView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:numColumns="3"
-		android:verticalSpacing="10dp"
-		android:horizontalSpacing="10dp">
+		android:numColumns="3">
 
 	</GridView>
+
+
 
 
 
