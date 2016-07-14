@@ -31,9 +31,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //レイアウトの生成
-        //GridViewできたから、いらない子
-//        dynamicViewGeneration(10);
+//        ArrayList<String> listStr_adapt = new ArrayList<String>();
+//
+//        listStr_adapt.add("A");
+//        listStr_adapt.add("B");
+//        listStr_adapt.add("C");
+//        listStr_adapt.add("D");
+//        listStr_adapt.add("E");
+//        listStr_adapt.add("F");
+//        listStr_adapt.add("G");
+//        listStr_adapt.add("H");
+//        listStr_adapt.add("I");
+//        listStr_adapt.add("J");
+//        listStr_adapt.add("K");
+//        listStr_adapt.add("L");
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+//                getApplicationContext(),
+//                android.R.layout.simple_list_item_1,
+//                listStr_adapt
+//        );
+//
+//        GridView gridView = (GridView)findViewById(R.id.images_gridView);
+//        gridView.setAdapter(adapter);
+//
+//    }
+
 
         ArrayList<Bitmap> list = load();
         BitmapAdapter adapter = new BitmapAdapter(
@@ -61,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         c.moveToFirst();
         for (int i = 0; i < c.getCount(); i++) {
             long id = c.getLong(c.getColumnIndexOrThrow("_id"));
-            Bitmap bmp = MediaStore.Images.Thumbnails.getThumbnail(cr, id, MediaStore.Images.Thumbnails.MICRO_KIND, null);
+            Bitmap bmp = MediaStore.Images.Thumbnails.getThumbnail(cr, id, MediaStore.Images.Thumbnails.MINI_KIND, null);
             list.add(bmp);
             c.moveToNext();
         }
